@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speech to Text with PDF/Picture Download</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Speech to Text with PDF/Picture Download</h1>
+
+        <!-- Output Language Selection -->
+        <div class="options">
+            <label for="language">Language:</label>
+            <select id="language">
+                <option value="en-US">English</option>
+                <option value="hi-IN">Hindi</option>
+            </select>
+
+            <label for="outputFormat">Output Format:</label>
+            <select id="outputFormat">
+                <option value="pdf">PDF</option>
+                <option value="picture">Picture</option>
+            </select>
+        </div>
+
+        <!-- Controls -->
+        <div class="controls">
+            <button id="permissionBtn" onclick="requestMicrophonePermission()">Enable Microphone</button>
+            <button id="startBtn" onclick="startRecording()" disabled>Start Recording</button>
+            <button id="stopBtn" onclick="stopRecording()" disabled>Stop Recording</button>
+            <button id="downloadBtn" onclick="downloadOutput()" disabled>Download</button>
+        </div>
+
+        <!-- Text Area for Transcription -->
+        <textarea id="output" placeholder="Your transcription will appear here..."></textarea>
+
+        <!-- Status Message -->
+        <div id="status"></div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
